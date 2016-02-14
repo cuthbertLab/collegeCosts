@@ -1,76 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>College Costs</title>
 
-    <!-- Bootstrap -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/main.css" rel="stylesheet">
-  </head>
-  <body>
-  
-    <div class="site-wrapper">
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
 
-      <div class="site-wrapper-inner">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-        <div class="cover-container">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">College Costs</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">States</a></li>
-                  <li><a href="https://github.com/cuthbertLab/collegeCosts">GitHub</a></li>
-                </ul>
-              </nav>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">College</span> Costs
+                </a>
             </div>
-          </div>
 
-          <div class="inner cover">
-            <h1 class="cover-heading">How Much Will College Cost <b>You</b>?</h1>
-            <p>&nbsp;<p>
-            <p class="lead">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#why">Why</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#files">Files</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#codeSection">Code</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">College<span class="accent">Costs</h1>
+                        <p class="intro-text">Cutting through government data to find<br>
+                        what College will cost <b class="accent">You</b>.</p>
+                        <a href="#why" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="why" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Why Do We Need This?</h2>
+            <p>
             The U.S. Department of Education has recently released an amazing
             <a href="http://collegescorecard.ed.gov">College Scorecard</a> to see how
             much various colleges cost and how well they do at graduating students.</p>
 
-            <p class="lead">
+            <p>
             There seemed to me to be a few important pieces of information missing, the
             most important being "How much will this college cost <b>Me</b>?" given
             me and my family's income and assets (and, for public colleges, which state I live in) and 
             "Show me only colleges I have a realistic chance of being admitted to."
-            </p>
-
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Produced by <a href="http://www.trecento.com">Michael Scott Cuthbert</a>, at 
-              <a href="http://mta.mit.edu/person/michael-scott-cuthbert">MIT</a>. <br>Copyright
-              &copy; 2016, Some Rights Reserved.</p>
+            </p>                            
             </div>
-          </div>
-
         </div>
+    </section>
 
-      </div>
+    <!-- Download Section -->
+    <section id="files" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Files By State</h2>
+                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
+                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </div>
+    <!-- Contact Section -->
+    <section id="codeSection" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Code/Data/Contact</h2>
+                <p>
+                The data for this site comes from the U.S. Government and the colleges. Click
+                below for their data.  The authors of this site are not responsible for any
+                errors in that data or in the processing of that data.
+                </p>
+                
+                <p>
+                All code used on this site is available at GitHub.
+                </p>
+                
+                <p>Contact Michael Cuthbert at <a href="mailto:cuthbert@mit.edu">cuthbert@mit.edu</a>
+                or follow him on Twitter.
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://collegescorecard.ed.gov/data" class="btn btn-default btn-lg"><i class="fa fa-graduation-cap fa-fw"></i> <span class="network-name">Govt. Data</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/cuthbertLab/collegeCosts" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/Mscuthbert" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-  </body>
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; 2016 <a href="http://www.trecento.com/">Michael Scott Cuthbert</a>,
+            Some Rights Reserved.<p>
+            <p>&nbsp;<br>
+            <small>Based on awesome 
+            <a href="http://startbootstrap.com/template-overviews/grayscale/">Grayscale</a> 
+            template.<br>
+            Image of <a href="https://en.wikipedia.org/wiki/Reed_College#/media/File:EliotHallReedCollege.jpg">Reed College</a>, 
+            and <a href="https://commons.wikimedia.org/wiki/File:USA-satellite.jpg">US Satellite Maps</a> from Wikipedia (CC-BY)</small></p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+</body>
+
 </html>
