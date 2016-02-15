@@ -33,6 +33,7 @@ incomeLevels = [None,
 
 costCutoffs = [None, 10000, 16000, 25000, 35000, 55000, 80000]
 
+
 def readFile():
     '''
     college.csv is the data from collegescorecard.ed.gov/data called "Scorecard data"
@@ -43,7 +44,7 @@ def readFile():
     rows = []
     
     with codecs.open(fn, encoding='latin-1') as csvfile: # encoding is guessed, but appears right
-        reader = csv.reader(csvfile)
+        reader = csv.reader(csvfile)      # King's college or something is wrong...
         for i, row in enumerate(reader):
             if i == 0:
                 header = row
@@ -53,10 +54,44 @@ def readFile():
     return rows
 
 class School(object):
+    '''
+    Takes in one school information object from the CSVfile...
+    '''
     def __init__(self, r, h):
         self.data = r
         self.headers = h
+        self.attrCache = {}
 
+    def __repr__(self):
+        return "<%s.%s %s>" % (self.__module__, self.__class__.__name__, 
+                                  self.instnm[0:40])
+
+    def __getattr__(self, attr):
+        if attr not in self.attrCache:
+            self.attrCache[attr] = self._getattrHelper(attr)
+        return self.attrCache[attr]
+
+    def _getattrHelper(self, attr):            
+        found = None
+        i = 0
+        for i, h in enumerate(self.headers):
+            if h.lower() == attr.lower():
+                found = i
+                break
+        if found is None:
+            raise AttributeError("Row has no column %r" % attr)
+        d = self.data[i]
+        if d == 'NULL':
+            return None
+        try:
+            junk_intD = int(d) # catch value error.
+            if int(d) == float(d):
+                return int(d)
+            else:
+                return float(d)
+        except ValueError:
+            return d
+        
     @property
     def isFourYear(self):
         if self.preddeg == 3: # 1 = cert; 2 = community; 4 = grad only
@@ -100,7 +135,16 @@ class School(object):
         if sats['v25'] is not None and sats['m25'] is not None:
             return sats['v25'] + sats['m25']
         else:
-            return .895 * (sats['v25'] + sats['m25'])
+            # apparently never used; the government might calculate 25th p. always?
+            return .895 * (sats['v50'] + sats['m50'])
+
+
+    @property
+    def act25(self):
+        if self.ACTCM25 is not None:
+            return self.ACTCM25
+        # every school with no ACTCM25 also lacks ACTCMMID so don't look there.
+        
     
     @property
     def gradRate(self):
@@ -145,27 +189,90 @@ class School(object):
         else:
             return False
 
+
+    knownAbbreviations = {
+        'Massachusetts Institute of Technology': 'MIT',
+        'Columbia University in the City of New York': 'Columbia (NYC)',
+        'California Institute of Technology': 'Caltech',                
+        'Cooper Union for the Advancement of Science and Art': 'Cooper Unison',
+        'Virginia Polytechnic Institute and State University': 'Virginia Polytechnic',
+        'Louisiana State University and Agricultural & Mechanical College': 'LSU, A&M',
+        'Saint Charles Borromeo Seminary-Overbrook': 'St. Ch. Borromeo Sem.-Overbrook',
+    }
     
-    def __getattr__(self, attr):
-        found = None
-        i = 0
-        for i, h in enumerate(self.headers):
-            if h.lower() == attr.lower():
-                found = i
-                break
-        if found is None:
-            raise AttributeError("Row has no column %r" % attr)
-        d = self.data[i]
-        if d == 'NULL':
-            return None
-        try:
-            junk_intD = int(d) # catch value error.
-            if int(d) == float(d):
-                return int(d)
-            else:
-                return float(d)
-        except ValueError:
-            return d
+    def shortName(self, maxLen=30):
+        def big():
+            return (len(shortName) > maxLen)
+        shortName = self.instnm
+        if shortName in self.knownAbbreviations:
+            shortName = self.knownAbbreviations[shortName]
+            
+        if big():
+            shortName = shortName.replace('San Francisco', 'SF')
+        if big():
+            shortName = shortName.replace('United States', 'US')
+        if big():
+            shortName = shortName.replace('California State University-', 'CSU ')
+        if big():
+            shortName = shortName.replace('Inter American University of Puerto Rico', 'Inter Amer U. PR')
+
+        if big():
+            shortName = shortName.replace('California Polytechnic State University-', 'Cal Poly ')
+        if big():
+            # these have "-Penn State...' after them so redundant
+            shortName = shortName.replace('Pennsylvania State University-', '')
+        if big():
+            shortName = shortName.replace('North Carolina State University', 'NC State')
+        if big():
+            shortName = shortName.replace('niversity', 'niv.').replace('ollege', 'ol.').replace(
+                                                            'Theological Seminary', 'Seminary')
+        if big():
+            shortName = shortName.replace(' at ', ' ')
+        if big():
+            shortName = shortName.replace('niv.', '.').replace('ol.', '.').replace(
+                                                                        'Universidad ', 'U.')
+        if big():
+            shortName = shortName.replace('Institute', 'Inst.')
+        if big():
+            shortName = shortName.replace('California', 'Cal.')
+        if big():
+            shortName = shortName.replace('Campuses ', ' ').replace('Campuses', '')
+        if big():
+            shortName = shortName.replace('Campus ', ' ').replace('Campus', '')
+        if big():
+            shortName = shortName.replace('the ', '').replace('The ', '')
+        if big():
+            shortName = shortName.replace('Conservatory', 'Conserv.')
+        if big():
+            shortName = shortName.replace('Technology', 'Tech.')
+        if big():
+            shortName = shortName.replace('Saint', 'St.')
+        if big():
+            shortName = shortName.replace('School of ', '')
+        if big():
+            shortName = shortName.replace('School', '')
+        if big():
+            shortName = shortName.replace('Sciences', '')
+        if big():
+            shortName = shortName.replace('Science', '')
+        if big():
+            shortName = shortName.replace('of ', '')
+        if big():
+            shortName = shortName.replace('Seminary', 'Sem.')
+        if big():
+            shortName = shortName.replace('and ', '& ')
+        if big():
+            shortName = shortName.replace('Southern ', 'S. ')
+        if big():
+            shortName = shortName.replace(' & ', '&')
+
+        shortName = shortName.replace('  ', ' ')
+        
+        if big():
+            shortName = shortName[0:maxLen]
+            #print(shortName, '          ', self.instnm)
+        return shortName
+
 
 def getSAT25diff(rows):
     '''
@@ -193,9 +300,12 @@ def filterRows(rows, satMin=700, satMax=800, costMax=None, costLevel=1, stateAbb
             continue
         if r.isFourYear is not True:
             continue
-        if r.sat25 is None:
+        if satMin is not None and r.sat25 is None:
             continue
-        if (r.sat25 < satMin or r.sat25 > satMax):
+        if (satMin is not None and satMax is not None and r.sat25 is not None and 
+                (r.sat25 < satMin or r.sat25 >= satMax)):
+            continue
+        if satMin is None and r.sat25 is not None:
             continue
         c = r.cost(costLevel)
         if c is None:
@@ -229,5 +339,5 @@ def generateSimulation(costLevel=1, costMax=10000, pubStateOnly=''):
             
 
 if __name__ == '__main__':
-    generateSimulation(1, 10000, 'MA')
+    generateSimulation(1, 10000, None)
     print(stateList)

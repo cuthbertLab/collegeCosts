@@ -81,6 +81,19 @@ for abbrev in states:
     newState = states[abbrev].replace('[', '<span class="accent">').replace(']', '</span>')
     stateNames[abbrev] = newState
 
+del(states)
+
+satRanges = [(400, 800, "SAT 25th percentile below 800"),
+             (800, 900, "SAT 25th percentile 800 to 899"),
+             (900, 1000, "SAT 25th percentile 900 to 999"),
+             (1000, 1100, "SAT 25th percentile 1000 to 1099"),
+             (1100, 1200, "SAT 25th percentile 1100 to 1199"),
+             (1200, 1350, "SAT 25th percentile 1200 to 1349"),
+             (1350, 1601, "SAT 25th percentile above 1350"),
+             (None, None, "Without SAT Data"),
+             ]
+
+
 class FileGenerator:
     yearStr = '2016'
     outdir = 'data/'
@@ -109,32 +122,26 @@ class FileGenerator:
         if row.isPublic:
             pub = self.markPub + row.STABBR
         
-        shortName = row.instnm
-        if len(shortName) > 30:
-            shortName = shortName.replace('California State University-', 'CSU ').replace(
-                                    'niversity', 'niv.').replace('ollege', 'ol.')
-        if len(shortName) > 30:
-            shortName = shortName.replace('niv.', '.').replace('ol.', '.')
-        if len(shortName) > 30:
-            shortName = shortName[0:30]
+        shortName = row.shortName(30)
             
         costStr =  locale.format("%d", row.cost(incomeLevel), grouping=True)
-        out = ("  $%7s   %4d     %2d%% %7s" % 
+        out = ("  $%7s   %4s    %3d%% %7s" % 
               (costStr, row.sat25, int(row.gradRate*100), pub))
-        out = ('<a href="https://collegescorecard.ed.gov/school/?%d">%30s</a>  %s' %
+        out = ('<a target=_new href="https://collegescorecard.ed.gov/school/?%d">%30s</a>  %s' %
                (row.unitid, shortName, out))
         return out
     
 
-    def generateOneSatHeader(self, incomeLevel, satMin, satMax):
-        header = "<h2>SAT 25th percentile of " + str(satMin) + " to " + str(satMax) + "</h2>\n" 
+    def generateOneSatHeader(self, incomeLevel, satExplain):
+        '''
+        this used to be complex enough to warrant its own method...
+        '''
+        header = "<h2>" + satExplain + "</h2>\n" 
         return header
     
-    def generateOneSatRange(self, incomeLevel, satMin, satMax=None):
-        if satMax is None:
-            satMax = satMin + 99
-        
-        header = self.generateOneSatHeader(incomeLevel, satMin, satMax)
+    def generateOneSatRange(self, incomeLevel, satData):
+        satMin, satMax, satExplain = satData # unpack them tuples
+        header = self.generateOneSatHeader(incomeLevel, satExplain)
 
         out = []
         out.append(header)
@@ -175,12 +182,12 @@ class FileGenerator:
         
         return out
 
-    def stateFilteredSatRange(self, incomeLevel, stateAbbr, satMin, satMax=None):
-        cacheKey = (incomeLevel, satMin, satMax)
+    def stateFilteredSatRange(self, incomeLevel, stateAbbr, satData):
+        cacheKey = (incomeLevel, satData)
         if cacheKey in self.cachedInfo:
             allRows = self.cachedInfo[cacheKey][:]
         else:
-            allRows = self.generateOneSatRange(incomeLevel, satMin, satMax=None)
+            allRows = self.generateOneSatRange(incomeLevel, satData)
             self.cachedInfo[cacheKey] = allRows[:]
         
         filteredRows = []
@@ -206,13 +213,16 @@ class FileGenerator:
         outFilePath = self.outFilePath(incomeLevel, stateAbbr)                
         
         allRanges = []
-        for satMin in range(700, 1500, 100):
-            oneRangeStr = self.stateFilteredSatRange(incomeLevel, stateAbbr, satMin)
+        for satData in satRanges:
+            oneRangeStr = self.stateFilteredSatRange(incomeLevel, stateAbbr, satData)
             allRanges.append(oneRangeStr)
         
         allAllStr = '\n'.join(allRanges)
+        abbrevNice = stateAbbr
+        if abbrevNice is None:
+            abbrevNice = 'All US'
         writeOut = self.template.format(dataGoesHere=allAllStr,
-                                        stateAbbr=stateAbbr,
+                                        stateAbbr=abbrevNice,
                                         stateName=stateNames[stateAbbr],
                                         incomeLevel=cc.incomeLevels[incomeLevel])
         with open(outFilePath, 'w', encoding='utf-8') as ofp:
