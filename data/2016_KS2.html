@@ -74,7 +74,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Kansas</h1>
+                        <h1 class="brand-heading"><span class="accent">Kan</span>sas</h1>
                         <p class="intro-text">College Costs for students with 
                         incomes <br><b class="accent">from $30,001 to $48,000</b>.</p>
                         <a href="#why" class="btn btn-circle page-scroll">
@@ -86,13 +86,21 @@
         </div>
     </header>
     <!-- About Section -->
-    <section id="why" class="container content-section text-center" style="padding-top: 10px">
+    <section id="why" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2 class="accent">The Costs</h2>
-                <p>Click any name to learn more from the Dept. of Education.  Costs include
+                <p class="text-left">Click any name to learn more from the Dept. of Education.  Costs include
                 room and board but do not include the costs paid by people who did not apply
                 for financial aid.</p>
+                   
+            <p class="text-left">Colleges are sorted by SAT <b>25th</b> percentile (not mean/median). Why?
+            Too many of us see an average number and think, "well, I can't go there, my
+            score is not high enough." Guess what? 50% of all students are below the
+            median, so someone's got to get in.  In fact, 1/4 of all students will have
+            a below 25th percentile score, so it may certainly be worth applying even if your scores
+            are below the numbers given there.</p>                  
+                
 <h2>SAT 25th percentile of 700 to 799</h2>
 
 <pre class='cost'>
@@ -117,7 +125,7 @@
 <a href="https://collegescorecard.ed.gov/school/?157100"> Kentucky Christian University</a>    $ 15,731    760     39%        
 <a href="https://collegescorecard.ed.gov/school/?181853">                  York College</a>    $ 15,876    750     35%        
 </pre>
-<button class='btn btn-default btn-lg btn-showCost' id='2_700'>Show More Expensive Options</button>
+<button class='btn btn-default btn-lg btn-showCost' id='2_700'>Show More Expensive</button>
 <pre class="cost hiddenPre" id="pre2_700">
 <a href="https://collegescorecard.ed.gov/school/?155627">      Ottawa University-Ottawa</a>    $ 16,040    790     35%        
 <a href="https://collegescorecard.ed.gov/school/?171599">                Olivet College</a>    $ 16,283    790     42%        
@@ -219,7 +227,7 @@
 <a href="https://collegescorecard.ed.gov/school/?211468">           Cedar Crest College</a>    $ 15,988    840     60%        
 <a href="https://collegescorecard.ed.gov/school/?200156">       University of Jamestown</a>    $ 15,989    860     52%        
 </pre>
-<button class='btn btn-default btn-lg btn-showCost' id='2_800'>Show More Expensive Options</button>
+<button class='btn btn-default btn-lg btn-showCost' id='2_800'>Show More Expensive</button>
 <pre class="cost hiddenPre" id="pre2_800">
 <a href="https://collegescorecard.ed.gov/school/?211431">             Carlow University</a>    $ 16,075    855     58%        
 <a href="https://collegescorecard.ed.gov/school/?155812">      University of Saint Mary</a>    $ 16,143    850     43%        
@@ -431,7 +439,7 @@
 <a href="https://collegescorecard.ed.gov/school/?215798">         Saint Vincent College</a>    $ 15,915    910     71%        
 <a href="https://collegescorecard.ed.gov/school/?228981">     Texas Lutheran University</a>    $ 15,923    930     48%        
 </pre>
-<button class='btn btn-default btn-lg btn-showCost' id='2_900'>Show More Expensive Options</button>
+<button class='btn btn-default btn-lg btn-showCost' id='2_900'>Show More Expensive</button>
 <pre class="cost hiddenPre" id="pre2_900">
 <a href="https://collegescorecard.ed.gov/school/?207324"> Oklahoma Christian University</a>    $ 16,021    910     49%        
 <a href="https://collegescorecard.ed.gov/school/?150604">              Franklin College</a>    $ 16,044    910     58%        
@@ -625,7 +633,7 @@
 <a href="https://collegescorecard.ed.gov/school/?139393">              Covenant College</a>    $ 15,439   1060     59%        
 <a href="https://collegescorecard.ed.gov/school/?226231">         LeTourneau University</a>    $ 15,825   1030     56%        
 </pre>
-<button class='btn btn-default btn-lg btn-showCost' id='2_1000'>Show More Expensive Options</button>
+<button class='btn btn-default btn-lg btn-showCost' id='2_1000'>Show More Expensive</button>
 <pre class="cost hiddenPre" id="pre2_1000">
 <a href="https://collegescorecard.ed.gov/school/?100937">   Birmingham Southern College</a>    $ 16,300   1040     63%        
 <a href="https://collegescorecard.ed.gov/school/?157818">       Transylvania University</a>    $ 16,435   1030     72%        
@@ -756,7 +764,7 @@
 <a href="https://collegescorecard.ed.gov/school/?174844">               St Olaf College</a>    $ 13,484   1180     86%        
 <a href="https://collegescorecard.ed.gov/school/?214175">            Muhlenberg College</a>    $ 14,776   1140     86%        
 </pre>
-<button class='btn btn-default btn-lg btn-showCost' id='2_1100'>Show More Expensive Options</button>
+<button class='btn btn-default btn-lg btn-showCost' id='2_1100'>Show More Expensive</button>
 <pre class="cost hiddenPre" id="pre2_1100">
 <a href="https://collegescorecard.ed.gov/school/?145725">Illinois Institute of Technolo</a>    $ 16,006   1160     65%        
 <a href="https://collegescorecard.ed.gov/school/?229267">            Trinity University</a>    $ 16,133   1150     80%        
@@ -819,7 +827,7 @@
 <a href="https://collegescorecard.ed.gov/school/?195030">       University of Rochester</a>    $ 15,140   1250     85%        
 <a href="https://collegescorecard.ed.gov/school/?212674">            Gettysburg College</a>    $ 15,361   1200     83%        
 </pre>
-<button class='btn btn-default btn-lg btn-showCost' id='2_1200'>Show More Expensive Options</button>
+<button class='btn btn-default btn-lg btn-showCost' id='2_1200'>Show More Expensive</button>
 <pre class="cost hiddenPre" id="pre2_1200">
 <a href="https://collegescorecard.ed.gov/school/?213543">             Lehigh University</a>    $ 16,044   1220     87%        
 <a href="https://collegescorecard.ed.gov/school/?164924">                Boston College</a>    $ 17,159   1270     91%        
@@ -871,7 +879,7 @@
 <a href="https://collegescorecard.ed.gov/school/?216287">            Swarthmore College</a>    $ 14,362   1350     92%        
 <a href="https://collegescorecard.ed.gov/school/?147767">       Northwestern University</a>    $ 15,436   1390     93%        
 </pre>
-<button class='btn btn-default btn-lg btn-showCost' id='2_1300'>Show More Expensive Options</button>
+<button class='btn btn-default btn-lg btn-showCost' id='2_1300'>Show More Expensive</button>
 <pre class="cost hiddenPre" id="pre2_1300">
 <a href="https://collegescorecard.ed.gov/school/?197221">                Webb Institute</a>    $ 17,853   1360     85%        
 <a href="https://collegescorecard.ed.gov/school/?167358">       Northeastern University</a>    $ 22,895   1300     80%        
@@ -895,7 +903,7 @@
 </pre>
 &nbsp;<br>&nbsp;<br>&nbsp;<br>
 
-                <p class="smaller">
+                <p class="smaller text-left">
                 Note that some schools will show unusual "discontinuities" especially at levels
                 where there aren't enough applicants to generate true averages (generally at the
                 lowest and highest income levels).  In some cases, people with the lowest
@@ -906,7 +914,7 @@
                 it probably is. (However, some of those amazing deals <b>are</b> true).
                 </p>
                 
-                <p>
+                <p class="text-left">
                 The lack of a feature to show all schools regardless of costs is  
                 <b class="accent">on purpose</b>.
                 If a school is pricing itself way out of the range of average families, maybe
@@ -917,10 +925,10 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="codeSection" class="container content-section text-center">
+    <section id="codeSection" class="container content-section ">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Code/Data/Contact</h2>
+                <h2 class="text-center">Code/Data/Contact</h2>
                 <p>
                 The data for this site comes from the U.S. Government and the colleges. Click
                 below for their data.  The authors of this site are not responsible for any
@@ -932,7 +940,7 @@
                 </p>
                 
                 <p>Made by Michael Scott Cuthbert, an MIT Prof. interested in understanding
-                data and helping people who might not believe they can afford college reach
+                data and in helping people who might not believe they can afford college reach
                 for their dreams. Contact him at <a href="mailto:cuthbert@mit.edu">cuthbert@mit.edu</a>
                 or follow him on Twitter.
                 </p>

@@ -12,6 +12,9 @@ $('.btn-income').click(function() {
 
 $('.btn-state').click(function() {
   currentState = this.innerHTML;
+  if (currentState == 'Show All') {
+      currentState = 'None';
+  }
   $('.btn-state').removeClass('active');
   $(this).addClass('active');
   makeHrefLink();

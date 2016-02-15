@@ -87,38 +87,32 @@
     </header>
 
     <!-- About Section -->
-    <section id="why" class="container content-section text-center">
+    <section id="why" class="container content-section">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Why Do We Need This?</h2>
+                <h2 class="text-center">Why Do We Need This?</h2>
             <p>
-            The U.S. Department of Education has recently released an amazing
+            The U.S. Department of Education has recently released a (mostly) amazing
             <a href="http://collegescorecard.ed.gov">College Scorecard</a> to see how
             much various colleges cost and how well they do at graduating students.</p>
 
             <p>
             There seemed to me to be a few important pieces of information missing, the
-            most important being "How much will this college cost <b>Me</b>?" given
-            me and my family's income and assets (and, for public colleges, which state I live in) and 
-            "Show me only colleges I have a realistic chance of being admitted to."
-            </p>                            
+            most important being, "How much will this college cost <b>Me</b>?"</p>
             
+            <p>Some colleges and universities adjust their tuition and costs a lot for 
+            families' incomes.  <a target=_new 
+            href="https://www.insidehighered.com/views/2013/02/25/college-scorecards-flawed-focus-average-net-price">Some don't</a>. 
+            You want to know which ones will be right for you.</p>
+            
+            <p>There's also no way on their site to match your scores with schools. 
+            Sometimes we should reach for the sky, sometimes we should be practical.
+            
+            On College Scorecard, there's no
+            button for, "Show me only colleges I have a realistic chance of being admitted to."
+            Here there is. We'll show the 25th percentiles to show the possibilities.
+            </p>
 
-            <p>The <a href="#files">files</a> below are broken down by family income and by state (since this determines
-            in state tuition). Unfortunately, I do not have data on out-of-state tuition
-            for public schools.  Only colleges where at least 1/3 of students graduate
-            are listed -- this is my decision on a minimum threshold below which you'd
-            be taking on substantial risk in attending.<p>
-            
-            <p>Colleges are sorted by SAT <b>25th</b> percentile (not mean/median). Why?
-            Too many of us see an average number and think, "well, I can't go there, my
-            score is not high enough." Guess what? 50% of all students are below the
-            median, so someone's got to get in.  In fact, 1/4 of all students will have
-            a below 25th percentile score, so it may certainly be worth applying even if your scores
-            are below the numbers given there.  <span class="smaller">(For schools that did not report SAT 25th/75th
-            levels, an estimate was used. ACT breakdowns coming soon. Apologies to
-            the many great schools that don't use either test and are thus not included.)</span>
-            <p>            
             </div>
         </div>
     </section>
@@ -131,7 +125,7 @@
                     <h2>College Files By State and Income</h2>
                                      
                                     
-                    <p>Choose your best estimate of your family's yearly income.</p>
+                    <p>1) Choose your best estimate of your family's yearly <b class="accent">income</b></p>
                     
                     <a href="#income1" class="btn btn-default btn-lg btn-income" role="button" inc="1">&lt; $30k</a>
                     <a href="#income2" class="btn btn-default btn-lg btn-income" role="button" inc="2">$30&ndash;48k</a>
@@ -141,7 +135,7 @@
 
                     &nbsp;<br>&nbsp;
 
-                    <p>And your state/territory...</p>
+                    <p>2) Click your <b class="accent">state</b> or territory (to calculate in-state tuition).</p>
                     
 <a href="#AL" class="btn btn-default btn-sm btn-state" role="button">AL</a>
 <a href="#AK" class="btn btn-default btn-sm btn-state" role="button">AK</a>
@@ -150,7 +144,7 @@
 <a href="#CA" class="btn btn-default btn-sm btn-state" role="button">CA</a>
 <a href="#CO" class="btn btn-default btn-sm btn-state" role="button">CO</a>
 <a href="#CT" class="btn btn-default btn-sm btn-state" role="button">CT</a>
-<a href="#DC" class="btn btn-default btn-sm btn-state" role="button">DC</a>
+<!--  <a href="#DC" class="btn btn-default btn-sm btn-state" role="button">DC</a>  -->
 <a href="#DE" class="btn btn-default btn-sm btn-state" role="button">DE</a>
 <a href="#FL" class="btn btn-default btn-sm btn-state" role="button">FL</a>
 <a href="#GA" class="btn btn-default btn-sm btn-state" role="button">GA</a>
@@ -191,20 +185,20 @@
 <a href="#UT" class="btn btn-default btn-sm btn-state" role="button">UT</a>
 <a href="#VT" class="btn btn-default btn-sm btn-state" role="button">VT</a>
 <a href="#VA" class="btn btn-default btn-sm btn-state" role="button">VA</a>
-<a href="#VI" class="btn btn-default btn-sm btn-state" role="button">VI</a>
+<!--  <a href="#VI" class="btn btn-default btn-sm btn-state" role="button">VI</a> -->
 <a href="#WA" class="btn btn-default btn-sm btn-state" role="button">WA</a>
 <a href="#WV" class="btn btn-default btn-sm btn-state" role="button">WV</a>
 <a href="#WI" class="btn btn-default btn-sm btn-state" role="button">WI</a>
-<a href="#WY" class="btn btn-default btn-sm btn-state" role="button">WY</a>           
-<a href="#None" class="btn btn-default btn-sm btn-state" role="button">None</a>           
+<a href="#WY" class="btn btn-default btn-sm btn-state" role="button">WY</a><br> 
+<a href="#None" class="btn btn-default btn-lg btn-state" role="button">Show All</a>           
                     
                     &nbsp;<br>&nbsp;
                     <p class="smaller">
-                    Choose "None" to see all colleges at <b>in-state</b> tuition levels.
+                    Sorry DC, Virgin Islands, etc. -- no data available.
                     </p>
 
-                    <p class="smaller">
                     
+                    <p class="smaller">                    
                     I originally made these charts to give talks to primarily lower-income
                     students about four-year college choices.  Thus only four-year colleges
                     are listed below. There are many excellent public two-year colleges
@@ -220,26 +214,36 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="codeSection" class="container content-section text-center">
+    <section id="codeSection" class="container content-section">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Code/Data/Contact</h2>
+                <h2 class="text-center">Code/Data/Contact</h2>
                 <p>
                 The data for this site comes from the U.S. Government and the colleges. Click
                 below for their data.  The authors of this site are not responsible for any
                 errors in that data or in the processing of that data.
                 </p>
+
+            <p class="smaller"><b>Caveats:</b> Unfortunately, I do not have data on out-of-state tuition
+            for public schools.  Only colleges where at least 1/3 of students graduate
+            are listed&mdash;this is my decision on a minimum threshold below which you'd
+            be taking on substantial risk in attending.<p>
+            
+            <p class="smaller">(For schools that did not report SAT 25th/75th
+            levels, an estimate was used. ACT breakdowns coming soon. Apologies to
+            the many great schools that don't use either test and are thus not included.)
+            </p>            
                 
                 <p>
                 All code used on this site is available at GitHub.
                 </p>
                 
                 <p>Made by Michael Scott Cuthbert, an MIT Prof. interested in understanding
-                data and helping people who might not believe they can afford college reach
+                data and in helping people who might not believe they can afford college reach
                 for their dreams. Contact him at <a href="mailto:cuthbert@mit.edu">cuthbert@mit.edu</a>
                 or follow him on Twitter.
                 </p>
-                <ul class="list-inline banner-social-buttons">
+                <ul class="text-center list-inline banner-social-buttons">
                     <li>
                         <a href="https://collegescorecard.ed.gov/data" class="btn btn-default btn-lg"><i class="fa fa-graduation-cap fa-fw"></i> <span class="network-name">Govt. Data</span></a>
                     </li>

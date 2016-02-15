@@ -74,7 +74,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Wisconsin</h1>
+                        <h1 class="brand-heading"><span class="accent">Wisc</span>onsin</h1>
                         <p class="intro-text">College Costs for students with 
                         incomes <br><b class="accent">from $75,001 to $110,000</b>.</p>
                         <a href="#why" class="btn btn-circle page-scroll">
@@ -86,13 +86,21 @@
         </div>
     </header>
     <!-- About Section -->
-    <section id="why" class="container content-section text-center" style="padding-top: 10px">
+    <section id="why" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2 class="accent">The Costs</h2>
-                <p>Click any name to learn more from the Dept. of Education.  Costs include
+                <p class="text-left">Click any name to learn more from the Dept. of Education.  Costs include
                 room and board but do not include the costs paid by people who did not apply
                 for financial aid.</p>
+                   
+            <p class="text-left">Colleges are sorted by SAT <b>25th</b> percentile (not mean/median). Why?
+            Too many of us see an average number and think, "well, I can't go there, my
+            score is not high enough." Guess what? 50% of all students are below the
+            median, so someone's got to get in.  In fact, 1/4 of all students will have
+            a below 25th percentile score, so it may certainly be worth applying even if your scores
+            are below the numbers given there.</p>                  
+                
 <h2>SAT 25th percentile of 700 to 799</h2>
 
 <pre class='cost'>
@@ -339,7 +347,7 @@
 <a href="https://collegescorecard.ed.gov/school/?168290">              Wheelock College</a>    $ 31,697    890     56%        
 <a href="https://collegescorecard.ed.gov/school/?215105">    The University of the Arts</a>    $ 33,004    890     60%        
 </pre>
-<button class='btn btn-default btn-lg btn-showCost' id='4_800'>Show More Expensive Options</button>
+<button class='btn btn-default btn-lg btn-showCost' id='4_800'>Show More Expensive</button>
 <pre class="cost hiddenPre" id="pre4_800">
 <a href="https://collegescorecard.ed.gov/school/?152363">         Saint Josephs College</a>    $ 36,555    890     46%        
 <a href="https://collegescorecard.ed.gov/school/?132657">               Lynn University</a>    $ 36,682    820     40%        
@@ -588,7 +596,7 @@
 <a href="https://collegescorecard.ed.gov/school/?198695">         High Point University</a>    $ 33,985    990     61%        
 <a href="https://collegescorecard.ed.gov/school/?192864">   Marymount Manhattan College</a>    $ 34,487    930     42%        
 </pre>
-<button class='btn btn-default btn-lg btn-showCost' id='4_900'>Show More Expensive Options</button>
+<button class='btn btn-default btn-lg btn-showCost' id='4_900'>Show More Expensive</button>
 <pre class="cost hiddenPre" id="pre4_900">
 <a href="https://collegescorecard.ed.gov/school/?166656">              MCPHS University</a>    $ 36,747    990     72%        
 <a href="https://collegescorecard.ed.gov/school/?133553">Embry-Riddle Aeronautical U.-D</a>    $ 36,912    980     57%        
@@ -724,7 +732,7 @@
 <a href="https://collegescorecard.ed.gov/school/?130226">         Quinnipiac University</a>    $ 34,699   1000     75%        
 <a href="https://collegescorecard.ed.gov/school/?120883">     University of the Pacific</a>    $ 34,956   1030     57%        
 </pre>
-<button class='btn btn-default btn-lg btn-showCost' id='4_1000'>Show More Expensive Options</button>
+<button class='btn btn-default btn-lg btn-showCost' id='4_1000'>Show More Expensive</button>
 <pre class="cost hiddenPre" id="pre4_1000">
 <a href="https://collegescorecard.ed.gov/school/?212054">             Drexel University</a>    $ 35,650   1070     67%        
 <a href="https://collegescorecard.ed.gov/school/?104586">Embry-Riddle Aeronautical U.-P</a>    $ 35,794   1040     57%        
@@ -827,7 +835,7 @@
 <a href="https://collegescorecard.ed.gov/school/?160755">Tulane University of Louisiana</a>    $ 32,562   1240     75%        
 <a href="https://collegescorecard.ed.gov/school/?194824">Rensselaer Polytechnic Institu</a>    $ 32,940   1290     84%        
 </pre>
-<button class='btn btn-default btn-lg btn-showCost' id='4_1200'>Show More Expensive Options</button>
+<button class='btn btn-default btn-lg btn-showCost' id='4_1200'>Show More Expensive</button>
 <pre class="cost hiddenPre" id="pre4_1200">
 <a href="https://collegescorecard.ed.gov/school/?122931">        Santa Clara University</a>    $ 35,717   1200     85%        
 <a href="https://collegescorecard.ed.gov/school/?193900">           New York University</a>    $ 38,792   1250     84%        
@@ -884,7 +892,7 @@
 </pre>
 &nbsp;<br>&nbsp;<br>&nbsp;<br>
 
-                <p class="smaller">
+                <p class="smaller text-left">
                 Note that some schools will show unusual "discontinuities" especially at levels
                 where there aren't enough applicants to generate true averages (generally at the
                 lowest and highest income levels).  In some cases, people with the lowest
@@ -895,7 +903,7 @@
                 it probably is. (However, some of those amazing deals <b>are</b> true).
                 </p>
                 
-                <p>
+                <p class="text-left">
                 The lack of a feature to show all schools regardless of costs is  
                 <b class="accent">on purpose</b>.
                 If a school is pricing itself way out of the range of average families, maybe
@@ -906,10 +914,10 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="codeSection" class="container content-section text-center">
+    <section id="codeSection" class="container content-section ">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Code/Data/Contact</h2>
+                <h2 class="text-center">Code/Data/Contact</h2>
                 <p>
                 The data for this site comes from the U.S. Government and the colleges. Click
                 below for their data.  The authors of this site are not responsible for any
@@ -921,7 +929,7 @@
                 </p>
                 
                 <p>Made by Michael Scott Cuthbert, an MIT Prof. interested in understanding
-                data and helping people who might not believe they can afford college reach
+                data and in helping people who might not believe they can afford college reach
                 for their dreams. Contact him at <a href="mailto:cuthbert@mit.edu">cuthbert@mit.edu</a>
                 or follow him on Twitter.
                 </p>
