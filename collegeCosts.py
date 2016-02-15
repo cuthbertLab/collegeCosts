@@ -271,6 +271,8 @@ class School(object):
         if big():
             shortName = shortName[0:maxLen]
             #print(shortName, '          ', self.instnm)
+        shortName = shortName.strip()
+            
         return shortName
 
 
