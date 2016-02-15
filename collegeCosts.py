@@ -17,6 +17,22 @@ from __future__ import division, print_function
 import csv
 import codecs
 
+stateList = [l.upper() for l in ("al ak az ar ca co ct dc de fl ga hi id il in ia ks " + 
+    "ky la me md ma mi mn ms mo mt ne nv nh nj nm ny nc nd oh ok or pa " + 
+    "pr ri sc sd tn tx ut vt va vi wa wv wi wy " + 
+    "dc vi pr").split()]
+stateList.append(None)
+
+
+incomeLevels = [None, 
+                'below $30,0000', 
+                'from $30,001 to $48,000', 
+                'from $48,001 to $75,000', 
+                'from $75,001 to $110,000',
+                'of $110,001 and above']
+
+costCutoffs = [None, 10000, 16000, 25000, 35000, 55000, 80000]
+
 def readFile():
     '''
     college.csv is the data from collegescorecard.ed.gov/data called "Scorecard data"
@@ -115,6 +131,21 @@ class School(object):
         lColumn = levPrefix + levSuffix
         return getattr(self, lColumn)
     
+    def belowCostLevel(self, level):
+        c = self.cost(level)
+        if c <= costCutoffs[level]:
+            return True
+        else:
+            return False
+
+    def belowExtremeCostLevel(self, level):
+        c = self.cost(level)
+        if c <= costCutoffs[level + 1]:
+            return True
+        else:
+            return False
+
+    
     def __getattr__(self, attr):
         found = None
         i = 0
@@ -153,10 +184,10 @@ def getSAT25diff(rows):
     return sum(satScores)/len(satScores), satScores
 
 
-def filterRows(rows, satMin=700, satMax=800, costMax=10000, costLevel=1):
+def filterRows(rows, satMin=700, satMax=800, costMax=None, costLevel=1, stateAbbr=None):
     rOut = []
     for r in rows:
-        if r.gradRate is None or r.gradRate < .34:
+        if r.gradRate is None or r.gradRate < .333333:
             continue
         if r.isPublic is False and r.isPrivate is False:
             continue
@@ -169,8 +200,11 @@ def filterRows(rows, satMin=700, satMax=800, costMax=10000, costLevel=1):
         c = r.cost(costLevel)
         if c is None:
             continue
-        if c > costMax:
+        if costMax is not None and c > costMax:
             continue
+        if stateAbbr is not None and r.isPublic and r.STABBR != stateAbbr:
+            continue
+        
         rOut.append(r)
     
     rOut.sort(key=lambda r: r.cost(costLevel))
@@ -180,13 +214,14 @@ def generateSimulation(costLevel=1, costMax=10000, pubStateOnly=''):
     r = readFile()
     
     for satMin in range(700, 1500, 100):
-        print("\n\n*****************     SAT 25th percentile of", satMin, "to", satMin+100, 
+        satMax = satMin + 99
+        print("\n\n*****************     SAT 25th percentile of", satMin, "to", satMax, 
               "    ***************\n")
-        rOut = filterRows(r, satMin=satMin, satMax=satMin+100, costMax=costMax, costLevel=costLevel)
+        rOut = filterRows(r, satMin=satMin, satMax=satMax, costMax=costMax, costLevel=costLevel)
         for rr in rOut:
             pub = ""
             if rr.isPublic:
-                if rr.STABBR != pubStateOnly:
+                if rr.STABBR != pubStateOnly and pubStateOnly is not None:
                     continue
                 pub = "*" + rr.STABBR
             print("%50s $%5d SAT:%4d, Grad: %2d%% %4s" % 
@@ -195,3 +230,4 @@ def generateSimulation(costLevel=1, costMax=10000, pubStateOnly=''):
 
 if __name__ == '__main__':
     generateSimulation(1, 10000, 'MA')
+    print(stateList)
