@@ -43,7 +43,7 @@ states = {
         'ME': 'Maine',
         'MI': 'Michi[gan]',
         'MN': 'Minne[sota]',
-        'MO': 'Missou[ri]',
+        'MO': 'Mis[souri]',
         'MP': 'N.Mariana[Islands]',
         'MS': '[Miss]issippi',
         'MT': 'Mon[tana]',
@@ -93,6 +93,17 @@ satRanges = [(400, 800, "SAT 25th percentile below 800"),
              (None, None, "Without SAT Data"),
              ]
 
+actRanges = [(2, 18, "ACT 25th percentile: 17 or below"),
+             (18, 20, "ACT 25th percentile: 18 or 19"),
+             (20, 22, "ACT 25th percentile: 20 or 21"),
+             (22, 24, "ACT 25th percentile: 22 or 23"),
+             (24, 27, "ACT 25th percentile: 24, 25, or 26"),
+             (27, 31, "ACT 25th percentile: 27 to 30"),
+             (31, 37, "ACT 25th percentile: 31 or higher"),
+             (None, None, "Without ACT Data"),
+             ]
+
+
 
 class FileGenerator:
     yearStr = '2016'
@@ -112,67 +123,82 @@ class FileGenerator:
         with open(self.dataTemplateFile) as dtf:
             self.template = ''.join(dtf.readlines())
     
-    def outFilePath(self, incomeLevel, stateAbbr):
+    def outFilePath(self, incomeLevel, stateAbbr, testType='SAT'):
         stateAbbrStr = str(stateAbbr) # for "None"
-        outfp = self.outdir + self.yearStr + "_" + stateAbbrStr + str(incomeLevel) + '.html'
+        if testType == 'SAT':
+            testType = ''
+        outfp = self.outdir + self.yearStr + "_" + stateAbbrStr + str(
+                                                            incomeLevel) + testType + '.html'
         return outfp
 
-    def oneLink(self, row, incomeLevel=5):
+    def oneLink(self, row, incomeLevel=5, testType='SAT'):
         pub = ""
         if row.isPublic:
             pub = self.markPub + row.STABBR
         
         shortName = row.shortName(30)
-            
+        testScore = row.sat25 if testType == 'SAT' else row.act25
+        
+        
         costStr =  locale.format("%d", row.cost(incomeLevel), grouping=True)
         out = ("  $%7s   %4s    %3d%% %7s" % 
-              (costStr, row.sat25, int(row.gradRate*100), pub))
+              (costStr, testScore, int(row.gradRate*100), pub))
         out = ('<a target=_new href="https://collegescorecard.ed.gov/school/?%d">%30s</a>  %s' %
                (row.unitid, shortName, out))
         return out
     
 
-    def generateOneSatHeader(self, incomeLevel, satExplain):
+    def generateOneTestHeader(self, incomeLevel, testExplain):
         '''
         this used to be complex enough to warrant its own method...
         '''
-        header = "<h2>" + satExplain + "</h2>\n" 
+        header = "<h2>" + testExplain + "</h2>\n" 
         return header
     
-    def generateOneSatRange(self, incomeLevel, satData):
-        satMin, satMax, satExplain = satData # unpack them tuples
-        header = self.generateOneSatHeader(incomeLevel, satExplain)
+    def generateOneTestRange(self, incomeLevel, testData, testType='SAT'):
+        testMin, testMax, testExplain = testData # unpack them tuples
+        header = self.generateOneTestHeader(incomeLevel, testExplain)
 
         out = []
         out.append(header)
         out.append("<pre class='cost'>")
-        out.append("<b>                                         Cost     SAT     Grad            </b>")
+        if testType == 'SAT':
+            out.append("<b>                                         Cost     SAT     Grad            </b>")
+            rOut = cc.filterRows(self.r, 
+                     satMin=testMin, 
+                     satMax=testMax, 
+                     costMax=None, 
+                     costLevel=incomeLevel,
+                     )
 
-        rOut = cc.filterRows(self.r, 
-                             satMin=satMin, 
-                             satMax=satMax, 
-                             costMax=None, 
-                             costLevel=incomeLevel,
-                             )
+        elif testType == 'ACT':
+            out.append("<b>                                         Cost     ACT     Grad            </b>")
+            rOut = cc.filterACTRows(self.r, 
+                                 actMin=testMin, 
+                                 actMax=testMax, 
+                                 costMax=None, 
+                                 costLevel=incomeLevel,
+                                 )
         
         
         for rr in rOut:
             if rr.belowCostLevel(incomeLevel):
-                out.append(self.oneLink(rr, incomeLevel))
+                out.append(self.oneLink(rr, incomeLevel, testType))
         
         out.append("</pre>")
         
         moreExpensiveExists = False
         moreExpensive = []
         moreExpensive.append("<button class='btn btn-default btn-lg btn-showCost' id='" +
-                    str(incomeLevel) + "_" + str(satMin) + "'>Show More Expensive</button>")
-        moreExpensive.append('<pre class="cost hiddenPre" id="pre' + str(incomeLevel) + "_" + str(satMin) + '">')
+                    str(incomeLevel) + "_" + str(testMin) + "'>Show More Expensive</button>")
+        moreExpensive.append('<pre class="cost hiddenPre" id="pre' + str(incomeLevel) + "_" + 
+                             str(testMin) + '">')
         for rr in rOut:
             if not rr.belowCostLevel(incomeLevel) and rr.belowExtremeCostLevel(incomeLevel):
-                moreExpensive.append(self.oneLink(rr, incomeLevel))
+                moreExpensive.append(self.oneLink(rr, incomeLevel, testType))
                 moreExpensiveExists = True
             elif not rr.belowExtremeCostLevel(incomeLevel):
-                moreExpensive.append("<span class='danger'>" + self.oneLink(rr, incomeLevel) + "</span>")
+                moreExpensive.append("<span class='danger'>" + self.oneLink(rr, incomeLevel, testType) + "</span>")
                 moreExpensiveExists = True
         moreExpensive.append("</pre>")
         
@@ -182,12 +208,12 @@ class FileGenerator:
         
         return out
 
-    def stateFilteredSatRange(self, incomeLevel, stateAbbr, satData):
-        cacheKey = (incomeLevel, satData)
+    def stateFilteredTestRange(self, incomeLevel, stateAbbr, testData, testType='SAT'):
+        cacheKey = (incomeLevel, testData, testType)
         if cacheKey in self.cachedInfo:
             allRows = self.cachedInfo[cacheKey][:]
         else:
-            allRows = self.generateOneSatRange(incomeLevel, satData)
+            allRows = self.generateOneTestRange(incomeLevel, testData, testType)
             self.cachedInfo[cacheKey] = allRows[:]
         
         filteredRows = []
@@ -207,14 +233,19 @@ class FileGenerator:
         return '\n'.join(filteredRows)
         
     
-    def generateOneFile(self, incomeLevel=1, stateAbbr=''):
+    def generateOneFile(self, incomeLevel=1, stateAbbr='', testType='SAT'):
         if self.quiet is not True:
-            print("Generating: ", stateAbbr, incomeLevel)
-        outFilePath = self.outFilePath(incomeLevel, stateAbbr)                
+            print("Generating: ", stateAbbr, incomeLevel, testType)
+        outFilePath = self.outFilePath(incomeLevel, stateAbbr, testType)     
         
         allRanges = []
-        for satData in satRanges:
-            oneRangeStr = self.stateFilteredSatRange(incomeLevel, stateAbbr, satData)
+        if testType == 'SAT':
+            testRanges = satRanges
+        else:
+            testRanges = actRanges
+        
+        for testData in testRanges:
+            oneRangeStr = self.stateFilteredTestRange(incomeLevel, stateAbbr, testData, testType)
             allRanges.append(oneRangeStr)
         
         allAllStr = '\n'.join(allRanges)
@@ -230,9 +261,10 @@ class FileGenerator:
     
     
     def generateAll(self):
-        for incomeLevel in range(1, 6):
-            for stateAbbr in cc.stateList:
-                self.generateOneFile(incomeLevel, stateAbbr)
+        for testType in ('ACT', 'SAT'):
+            for incomeLevel in range(1, 6):
+                for stateAbbr in cc.stateList:
+                    self.generateOneFile(incomeLevel, stateAbbr, testType)
             
 if __name__ == '__main__':
     fg = FileGenerator()

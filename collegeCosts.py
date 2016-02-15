@@ -322,6 +322,36 @@ def filterRows(rows, satMin=700, satMax=800, costMax=None, costLevel=1, stateAbb
     rOut.sort(key=lambda r: r.cost(costLevel))
     return rOut
 
+def filterACTRows(rows, actMin=700, actMax=800, costMax=None, costLevel=1, stateAbbr=None):
+    rOut = []
+    for r in rows:
+        if r.gradRate is None or r.gradRate < .333333:
+            continue
+        if r.isPublic is False and r.isPrivate is False:
+            continue
+        if r.isFourYear is not True:
+            continue
+        if actMin is not None and r.act25 is None:
+            continue
+        if (actMin is not None and actMax is not None and r.act25 is not None and 
+                (r.act25 < actMin or r.act25 >= actMax)):
+            continue
+        if actMin is None and r.act25 is not None:
+            continue
+        c = r.cost(costLevel)
+        if c is None:
+            continue
+        if costMax is not None and c > costMax:
+            continue
+        if stateAbbr is not None and r.isPublic and r.STABBR != stateAbbr:
+            continue
+        
+        rOut.append(r)
+    
+    rOut.sort(key=lambda r: r.cost(costLevel))
+    return rOut
+
+
 def generateSimulation(costLevel=1, costMax=10000, pubStateOnly=''):
     r = readFile()
     
