@@ -25,7 +25,7 @@ stateList.append(None)
 
 
 incomeLevels = [None, 
-                'below $30,0000', 
+                'below $30,000', 
                 'from $30,001 to $48,000', 
                 'from $48,001 to $75,000', 
                 'from $75,001 to $110,000',

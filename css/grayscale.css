@@ -33,16 +33,16 @@ p {
       line-height: 1.6; } }
 
 a {
-  color: #D2DC53;
+  color: #EEC153;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out; }
   a:hover, a:focus {
     text-decoration: none;
-    color: #9da722; }
+    color: #c79314; }
 
 .accent {
-  color: #D2DC53; }
+  color: #EEC153; }
 
 .light {
   font-weight: 400; }
@@ -222,26 +222,26 @@ a {
   border-radius: 0; }
 
 .btn-default {
-  border: 1px solid #D2DC53;
-  color: #D2DC53;
+  border: 1px solid #EEC153;
+  color: #EEC153;
   background-color: transparent; }
   .btn-default:hover, .btn-default:focus {
-    border: 1px solid #D2DC53;
+    border: 1px solid #EEC153;
     outline: none;
     color: black;
-    background-color: #D2DC53; }
+    background-color: #EEC153; }
 
 .btn-default.active {
-  border: 1px solid #D2DC53;
+  border: 1px solid #EEC153;
   outline: none;
   color: black;
-  background-color: #D2DC53; }
+  background-color: #EEC153; }
 
 .btn-default.active:focus {
-  border: 1px solid #D2DC53;
+  border: 1px solid #EEC153;
   outline: none;
   color: black;
-  background-color: #D2DC53; }
+  background-color: #EEC153; }
 
 ul.banner-social-buttons {
   margin-top: 0; }
