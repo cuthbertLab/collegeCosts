@@ -1,0 +1,457 @@
+192040 Jewish Seminary of America 2 $ -6429 < -5629
+192040 Jewish Seminary of America 3 $ -15101 < -6429
+156295 Berea College 4 $ 5164 < 5433
+156295 Berea College 5 $ 3896 < 5164
+166027 Harvard University 2 $ 2977 < 3897
+159391 LSU, A&M 5 $ 14945 < 15184
+234085 Virginia Military Institute 3 $ 11614 < 18523
+436836 Univ. of Connecticut-Stamford 5 $ 12214 < 12413
+212911 Haverford College 2 $ 5599 < 5685
+186131 Princeton University 2 $ 5389 < 5932
+233897 The U. of Virginia's C. Wise 2 $ 6501 < 6583
+198419 Duke University 2 $ 5507 < 6871
+262129 New College of Florida 2 $ 6995 < 7007
+170639 Lake Superior State University 5 $ 16021 < 16509
+115409 Harvey Mudd College 3 $ 10771 < 11942
+148654 Univ. of Illinois Springfield 4 $ 14123 < 14199
+178624 Northwest Missouri State Univ. 5 $ 13574 < 13915
+207041 East Central University 2 $ 6742 < 7329
+157401 Murray State University 5 $ 12951 < 13113
+221519 Sewanee-The Univ. of the South 3 $ 7499 < 34724
+221999 Vanderbilt University 2 $ 6793 < 7411
+130794 Yale University 3 $ 6939 < 7698
+159966 Nicholls State University 5 $ 12194 < 12957
+217882 Clemson University 3 $ 10490 < 15083
+221847 Tennessee Technological Univ. 5 $ 14462 < 14517
+171146 University of Michigan-Flint 5 $ 15355 < 15537
+106458 Arkansas State U.-Main Campus 5 $ 11508 < 12230
+200253 Minot State University 2 $ 7997 < 8068
+190150 Columbia (NYC) 2 $ 3514 < 8086
+151324 Indiana State University 5 $ 16910 < 17178
+230047 Brigham Young Univ.-Hawaii 5 $ 13253 < 13338
+130590 Trinity College 2 $ 7451 < 8319
+237330 Concord University 5 $ 15053 < 15089
+106467 Arkansas Tech University 2 $ 8399 < 8433
+132408 The Baptist College of Florida 5 $ 12923 < 13298
+195173 St Francis College 5 $ 15827 < 16146
+200059 Dickinson State University 2 $ 7447 < 8757
+157386 Morehead State University 2 $ 8686 < 8774
+228787 The Univ. of Texas at Dallas 2 $ 8674 < 8801
+228787 The Univ. of Texas at Dallas 5 $ 15098 < 15221
+156189 Alice Lloyd College 3 $ 8318 < 10134
+107877 Williams Baptist College 5 $ 13147 < 13476
+176035 Mississippi Univ. for Women 5 $ 10957 < 12640
+136206 Northwood University-Florida 5 $ 19926 < 20873
+110404 Caltech 2 $ 8225 < 9110
+399911 Soka University of America 2 $ 8313 < 9312
+399911 Soka University of America 5 $ 9172 < 17364
+198385 Davidson College 2 $ 8341 < 9479
+106713 Central Baptist College 2 $ 8605 < 9643
+106713 Central Baptist College 4 $ 13315 < 13813
+227243 Northwood University-Texas 2 $ 9379 < 9683
+221014 Milligan College 5 $ 19482 < 20587
+182670 Dartmouth College 2 $ 4870 < 9858
+131450 Gallaudet University 3 $ 9771 < 10759
+173258 Carleton College 2 $ 10155 < 10300
+168148 Tufts University 2 $ 10238 < 10325
+219046 Black Hills State University 3 $ 13835 < 15451
+150774 Holy Cross College 4 $ 18177 < 19740
+204501 Oberlin College 2 $ 9785 < 10774
+199698 St Andrews University 4 $ 22836 < 26612
+161235 Univ. of Maine at Fort Kent 2 $ 10611 < 10963
+187444 William Paterson U. New Jersey 5 $ 19820 < 19990
+181093 Grace University 2 $ 5568 < 10984
+178697 College of the Ozarks 2 $ 11057 < 11078
+178697 College of the Ozarks 5 $ 13001 < 13628
+227881 Sam Houston State University 2 $ 10251 < 11096
+112260 Claremont McKenna College 2 $ 7477 < 11104
+194569 Davis College 2 $ 10063 < 11107
+194569 Davis College 5 $ 17218 < 17549
+139630 Emmanuel College 2 $ 10698 < 11142
+139630 Emmanuel College 5 $ 14895 < 15444
+141334 University of West Georgia 5 $ 16392 < 16431
+220613 Lee University 2 $ 10319 < 11297
+220613 Lee University 5 $ 15518 < 16113
+214829 Penn State York 2 $ 10987 < 11360
+162928 Johns Hopkins University 2 $ 8574 < 11547
+199069 Mount Olive College 2 $ 10035 < 11553
+199069 Mount Olive College 3 $ 9758 < 10035
+199069 Mount Olive College 5 $ 14109 < 14201
+219806 Carson-Newman University 5 $ 17968 < 18119
+150677 Grace Col. and Seminary 5 $ 18511 < 19667
+152080 University of Notre Dame 2 $ 10245 < 12176
+219356 South Dakota State University 5 $ 17324 < 17335
+204200 College of Mount St Joseph 2 $ 11675 < 12226
+218539 Presbyterian College 5 $ 20874 < 21238
+130934 Delaware State University 5 $ 8163 < 16424
+219091 Dakota Wesleyan University 5 $ 17637 < 17844
+159568 Louisiana College 2 $ 12594 < 12679
+159568 Louisiana College 3 $ 11599 < 12594
+159568 Louisiana College 5 $ 8907 < 11719
+206084 University of Toledo 5 $ 16942 < 17139
+232681 University of Mary Washington 2 $ 11528 < 12720
+190372 Cooper Unison 2 $ 12399 < 12772
+190372 Cooper Unison 4 $ 17085 < 19937
+153366 Graceland University-Lamoni 2 $ 11740 < 12786
+141325 Wesleyan College 3 $ 13739 < 15864
+141325 Wesleyan College 4 $ 4958 < 13739
+155937 Sterling College 2 $ 12794 < 13057
+199962 Wingate University 2 $ 12689 < 13086
+148496 Dominican University 2 $ 12682 < 13139
+172334 Spring Arbor University 2 $ 13152 < 13211
+150455 Earlham College 2 $ 12469 < 13270
+176789 Calvary Bible C. and Seminary 4 $ 15312 < 16085
+156125 Wichita State University 2 $ 13176 < 13336
+237118 Alderson Broaddus University 2 $ 13071 < 13431
+215266 Univ. of Pittsburgh-Bradford 2 $ 12833 < 13450
+215266 Univ. of Pittsburgh-Bradford 5 $ 19551 < 19574
+215275 Univ. of Pittsburgh-Greensburg 2 $ 13244 < 13471
+239743 Silver Lake C. of Holy Family 3 $ 13497 < 13857
+139199 Brenau University 5 $ 16815 < 18571
+143118 Aurora University 2 $ 13507 < 13607
+122728 William Jessup University 2 $ 11854 < 13609
+161873 University of Baltimore 5 $ 20987 < 21388
+218441 North Greenville University 4 $ 15258 < 15381
+197221 Webb Institute 3 $ 15770 < 17853
+107558 University of the Ozarks 2 $ 12469 < 13809
+217925 Columbia International Univ. 2 $ 12172 < 13830
+217925 Columbia International Univ. 5 $ 18502 < 18904
+177542 Hannibal-LaGrange University 2 $ 13831 < 13837
+177542 Hannibal-LaGrange University 5 $ 16156 < 16971
+239512 Northland College 2 $ 13759 < 13865
+240338 Wisconsin Lutheran College 2 $ 12924 < 13894
+162584 Frostburg State University 5 $ 19323 < 19422
+200156 University of Jamestown 3 $ 15840 < 15989
+200156 University of Jamestown 5 $ 15060 < 17000
+215284 Univ. of Pittsburgh-Johnstown 5 $ 21058 < 21131
+201061 Art Academy of Cincinnati 5 $ 21235 < 21879
+211273 Bryn Mawr College 2 $ 12215 < 14097
+176080 Mississippi State University 5 $ 18846 < 19016
+127741 Univ. of Northern Colorado 4 $ 17691 < 17702
+172264 Siena Heights University 5 $ 17904 < 19399
+199315 Piedmont International Univ. 2 $ 11905 < 14527
+178244 Missouri Baptist University 5 $ 17840 < 18015
+199032 Montreat College 4 $ 17859 < 18586
+152099 Oakland City University 2 $ 13888 < 14730
+152099 Oakland City University 5 $ 14421 < 20185
+155496 Manhattan Christian College 2 $ 12896 < 14778
+155496 Manhattan Christian College 4 $ 16001 < 16151
+176947 Central Methodist U.-C. Libera 5 $ 20316 < 20321
+195243 St Thomas Aquinas College 4 $ 24264 < 25160
+219949 Cumberland University 2 $ 13260 < 14833
+155627 Ottawa University-Ottawa 4 $ 18987 < 19202
+155627 Ottawa University-Ottawa 5 $ 18014 < 18987
+140818 Piedmont College 3 $ 16365 < 16558
+140818 Piedmont College 5 $ 16247 < 17005
+231077 College of St Joseph 2 $ 14422 < 14966
+231077 College of St Joseph 4 $ 20849 < 23383
+150145 Bethel College-Indiana 2 $ 14373 < 15035
+101541 Judson College 4 $ 19308 < 20215
+210429 Western Oregon University 2 $ 14669 < 15105
+183910 Caldwell College 2 $ 15016 < 15115
+217934 Columbia College 4 $ 16566 < 18423
+217633 Anderson University 4 $ 19347 < 19714
+237358 Davis & Elkins College 2 $ 14723 < 15189
+138275 Warner University 2 $ 15188 < 15209
+212009 Dickinson College 2 $ 12354 < 15278
+237385 Glenville State College 2 $ 12687 < 15307
+155812 University of Saint Mary 3 $ 14390 < 16143
+157757 Spalding University 2 $ 14475 < 15420
+148131 Quincy University 2 $ 13403 < 15438
+220808 Memphis College of Art 5 $ 23315 < 23493
+180595 Rocky Mountain College 2 $ 13119 < 15505
+141185 Toccoa Falls College 3 $ 16555 < 16808
+141185 Toccoa Falls College 5 $ 21150 < 21266
+195030 University of Rochester 2 $ 15140 < 15555
+120254 Occidental College 2 $ 14200 < 15635
+117104 Life Pacific College 3 $ 15823 < 16318
+149781 Wheaton College 2 $ 14371 < 15720
+238078 Wheeling Jesuit University 2 $ 13785 < 15729
+168528 Adrian College 2 $ 15102 < 15774
+147767 Northwestern University 2 $ 15436 < 15841
+177418 Fontbonne University 2 $ 13055 < 15848
+177418 Fontbonne University 5 $ 9647 < 14826
+446048 Ave Maria University 2 $ 15829 < 15853
+145372 Greenville College 2 $ 14826 < 15854
+217907 Coker College 2 $ 13966 < 15889
+217907 Coker College 4 $ 16624 < 17156
+140988 Shorter University 5 $ 18899 < 19028
+228042 Schreiner University 2 $ 13937 < 15928
+189097 Barnard College 2 $ 11110 < 15943
+179043 Rockhurst University 3 $ 16501 < 17290
+195474 Siena College 4 $ 27908 < 28078
+213400 Lancaster Bible College 3 $ 17012 < 17202
+149514 Trinity International U.-Illin 3 $ 17663 < 18137
+150756 Hanover College 2 $ 15257 < 16091
+146667 Lincoln Christian University 5 $ 21050 < 22841
+211024 Baptist Bible C.&Sem. Pennsylv 2 $ 14473 < 16122
+237969 West Virginia Wesleyan College 2 $ 15907 < 16123
+213543 Lehigh University 2 $ 16044 < 16142
+153375 Grand View University 5 $ 19858 < 19865
+184773 Georgian Court University 2 $ 15472 < 16190
+155335 Newman University 3 $ 15686 < 16253
+199458 Mid-Atlantic Christian Univ. 2 $ 13862 < 16283
+148584 University of St Francis 2 $ 14658 < 16348
+148584 University of St Francis 5 $ 19254 < 20117
+161563 Thomas College 2 $ 15612 < 16402
+237057 Whitman College 3 $ 24301 < 24762
+232308 Hollins University 2 $ 15393 < 16495
+138868 Point University 2 $ 15703 < 16507
+138868 Point University 5 $ 19388 < 20531
+220215 Freed-Hardeman University 4 $ 18575 < 20540
+150668 Goshen College 2 $ 15691 < 16534
+163578 Notre Dame of Maryland Univ. 3 $ 20857 < 21869
+144971 Eureka College 2 $ 15011 < 16643
+181853 York College 2 $ 15876 < 16674
+181853 York College 3 $ 15845 < 15876
+144351 Concordia University-Chicago 2 $ 16351 < 16686
+144351 Concordia University-Chicago 3 $ 16216 < 16351
+198066 Brevard College 2 $ 16607 < 16688
+185590 Montclair State University 5 $ 22542 < 22603
+209409 Northwest Christian University 4 $ 20176 < 20203
+217776 Southern Wesleyan University 2 $ 15790 < 16767
+217776 Southern Wesleyan University 4 $ 19443 < 19787
+174899 The Col. of Saint Scholastica 2 $ 16598 < 16822
+167394 Col. of Our Lady of the Elms 2 $ 15907 < 16839
+197230 Wells College 2 $ 16756 < 16863
+217873 Claflin University 2 $ 11923 < 16896
+217873 Claflin University 4 $ 16940 < 21110
+176628 Avila University 2 $ 14763 < 16916
+198756 Johnson C Smith University 2 $ 15205 < 16936
+198756 Johnson C Smith University 5 $ 15735 < 22597
+173328 Concordia Univ.-Saint Paul 2 $ 14740 < 16946
+217961 Converse College 2 $ 16803 < 16974
+217961 Converse College 4 $ 19881 < 20528
+215114 Cairn University-Langhorne 2 $ 13408 < 17070
+127918 Regis University 2 $ 16700 < 17088
+155520 MidAmerica Nazarene University 2 $ 16828 < 17121
+218733 South Carolina State Univ. 5 $ 19258 < 20691
+156408 Centre College 2 $ 17024 < 17161
+153126 Clarke University 3 $ 20185 < 20813
+231420 Averett University 3 $ 17526 < 18683
+152381 Saint Mary-of-the-Woods Col. 2 $ 11893 < 17193
+152381 Saint Mary-of-the-Woods Col. 4 $ 16114 < 19055
+141486 Chaminade Univ. of Honolulu 2 $ 16692 < 17200
+179326 Southwest Baptist University 2 $ 14886 < 17216
+219295 Presentation College 4 $ 21712 < 21958
+137564 Southeastern University 2 $ 16697 < 17264
+198899 Mars Hill University 2 $ 16884 < 17268
+198899 Mars Hill University 3 $ 16624 < 16884
+198899 Mars Hill University 5 $ 12568 < 17325
+165644 Eastern Nazarene College 3 $ 15996 < 17577
+208488 Concordia University-Portland 2 $ 16255 < 17420
+239071 Maranatha Baptist University 2 $ 17091 < 17429
+137476 St Thomas University 4 $ 19814 < 21097
+179946 Westminster College 2 $ 16982 < 17450
+154749 Bethel College-North Newton 3 $ 17675 < 18226
+154721 Bethany College 2 $ 17430 < 17493
+124292 Thomas Aquinas College 3 $ 16944 < 18556
+181020 Doane College-Crete 5 $ 23049 < 23971
+198835 Lenoir-Rhyne University 2 $ 17193 < 17806
+191676 Houghton College 2 $ 17693 < 17870
+154101 Northwestern College 2 $ 17704 < 17934
+155511 McPherson College 2 $ 16932 < 17976
+164447 American International College 3 $ 18545 < 18843
+157809 Thomas More College 4 $ 18174 < 22332
+157809 Thomas More College 5 $ 16195 < 18174
+152530 Taylor University 5 $ 21116 < 21411
+215743 Saint Francis University 2 $ 16460 < 18150
+215743 Saint Francis University 5 $ 25150 < 25661
+139658 Emory University 2 $ 17610 < 18204
+174862 Crown College 5 $ 17944 < 20321
+231554 Bluefield College 3 $ 18344 < 19502
+231554 Bluefield College 5 $ 22229 < 22644
+179955 William Jewell College 3 $ 20411 < 20829
+174437 North Central University 2 $ 16799 < 18290
+138293 Webber International Univ. 4 $ 20338 < 21655
+138293 Webber International Univ. 5 $ 18262 < 20338
+232043 Eastern Mennonite University 2 $ 17183 < 18325
+232256 Hampden-Sydney College 2 $ 16924 < 18361
+149505 Trinity Christian College 2 $ 17879 < 18386
+215947 Seton Hill University 2 $ 17724 < 18396
+133872 Adventist U. of Health 2 $ 18301 < 18425
+120865 Pacific Union College 2 $ 17998 < 18430
+183822 Bloomfield College 5 $ 28929 < 30221
+206507 Wilmington College 2 $ 18323 < 18661
+142090 Boise Bible College 2 $ 18283 < 18671
+157100 Kentucky Christian University 2 $ 15731 < 18738
+136330 Palm Beach Atlantic University 2 $ 18496 < 18750
+142461 Northwest Nazarene University 3 $ 17820 < 19231
+142461 Northwest Nazarene University 5 $ 19750 < 20164
+233301 Randolph College 3 $ 20205 < 21730
+132471 Barry University 2 $ 17768 < 18897
+237181 Bethany College 2 $ 18249 < 19030
+230807 Westminster College 3 $ 19587 < 19644
+131469 George Washington University 2 $ 18255 < 19079
+180106 Carroll College 2 $ 19081 < 19205
+179964 William Woods University 2 $ 18184 < 19207
+160904 Xavier University of Louisiana 3 $ 20379 < 20386
+160904 Xavier University of Louisiana 4 $ 16871 < 20379
+160904 Xavier University of Louisiana 5 $ 15846 < 16871
+150400 DePauw University 2 $ 15231 < 19227
+206835 Oklahoma Wesleyan University 3 $ 19186 < 20079
+207458 Oklahoma City University 4 $ 26792 < 28621
+145646 Illinois Wesleyan University 2 $ 17989 < 19342
+207582 Oral Roberts University 2 $ 18756 < 19353
+225399 Houston Baptist University 2 $ 18995 < 19459
+225399 Houston Baptist University 3 $ 18802 < 18995
+164739 Bentley University 3 $ 20996 < 21722
+228246 Southern Methodist University 2 $ 19451 < 19647
+239628 Ripon College 2 $ 15196 < 19686
+164580 Babson College 2 $ 16899 < 19718
+155414 Kansas Wesleyan University 2 $ 19526 < 19747
+155414 Kansas Wesleyan University 3 $ 19479 < 19526
+224323 University of Dallas 3 $ 22634 < 22973
+232706 Marymount University 5 $ 23341 < 23581
+234173 Virginia Wesleyan College 2 $ 19666 < 19840
+190983 Elmira College 3 $ 20413 < 23060
+238430 Cardinal Stritch University 2 $ 18058 < 19874
+177968 Lindenwood University 2 $ 19364 < 19893
+214069 Misericordia University 2 $ 19822 < 19924
+211291 Bucknell University 2 $ 19852 < 19934
+174491 Univ. of Northwestern-St Paul 2 $ 18639 < 19962
+210331 Corban University 4 $ 20769 < 22529
+210331 Corban University 5 $ 17976 < 20769
+226471 Univ. of Mary Hardin-Baylor 3 $ 20321 < 20634
+202514 Defiance College 2 $ 19974 < 19982
+220181 Fisk University 2 $ 17554 < 20058
+220181 Fisk University 4 $ 25335 < 26244
+220181 Fisk University 5 $ 25290 < 25335
+155070 Barclay College 5 $ 13990 < 24467
+162061 Capitol College 3 $ 17835 < 21720
+162061 Capitol College 4 $ 15341 < 17835
+198950 Meredith College 2 $ 19635 < 20179
+215442 Point Park University 2 $ 18861 < 20216
+164614 Boston Baptist College 3 $ 19641 < 21976
+216597 Villanova University 2 $ 18104 < 20259
+216542 Valley Forge Christian College 2 $ 20149 < 20268
+216542 Valley Forge Christian College 4 $ 22850 < 23293
+132879 Johnson University Florida 2 $ 20093 < 20290
+132879 Johnson University Florida 4 $ 21780 < 24937
+198561 Gardner-Webb University 2 $ 19056 < 20310
+218238 Limestone College 2 $ 19398 < 20332
+218238 Limestone College 5 $ 23888 < 24570
+237312 University of Charleston 2 $ 17112 < 20368
+237312 University of Charleston 3 $ 15621 < 17112
+175421 Belhaven University 5 $ 23477 < 24277
+232609 Lynchburg College 2 $ 17691 < 20451
+181002 Creighton University 2 $ 19524 < 20492
+177746 Kansas City Art Institute 2 $ 18876 < 20529
+209065 Linfield C.-McMinnville Campus 2 $ 20464 < 20598
+155973 Tabor College 2 $ 20123 < 20679
+204617 Ohio Dominican University 2 $ 20535 < 20714
+204617 Ohio Dominican University 5 $ 21082 < 21285
+231837 Jefferson C. of Health 2 $ 20487 < 20717
+231837 Jefferson C. of Health 5 $ 23432 < 24965
+197197 Wagner College 4 $ 28127 < 28457
+152567 Trine University 2 $ 17726 < 20757
+131520 Howard University 4 $ 23546 < 26917
+131520 Howard University 5 $ 19597 < 23546
+199412 Queens University of Charlotte 2 $ 20142 < 20805
+232265 Hampton University 4 $ 23052 < 24878
+205957 Franciscan U. of Steubenville 3 $ 22132 < 22567
+175980 Millsaps College 2 $ 20639 < 20933
+175980 Millsaps College 4 $ 23408 < 23984
+224004 Concordia University-Texas 4 $ 24124 < 24345
+233718 Sweet Briar College 5 $ 26976 < 27362
+204936 Otterbein University 2 $ 21048 < 21210
+154855 Central Christian C. of Kansas 2 $ 18242 < 21221
+154855 Central Christian C. of Kansas 3 $ 18191 < 18242
+154855 Central Christian C. of Kansas 5 $ 15803 < 19357
+209287 Multnomah University 2 $ 20511 < 21322
+174127 Minneapolis C. Art and Design 3 $ 21534 < 22931
+120537 Hope International University 3 $ 22213 < 22558
+197984 Belmont Abbey College 3 $ 20244 < 21702
+197984 Belmont Abbey College 5 $ 22667 < 23341
+128498 Albertus Magnus College 2 $ 20713 < 21573
+128498 Albertus Magnus College 5 $ 23408 < 24591
+118693 Menlo College 2 $ 20642 < 21734
+160755 Tulane University of Louisiana 2 $ 20601 < 22003
+110413 California Lutheran University 2 $ 21910 < 22038
+454184 The King's College 2 $ 22010 < 22175
+454184 The King's College 5 $ 26029 < 26629
+123165 Scripps College 2 $ 14624 < 22193
+123165 Scripps College 3 $ 13479 < 14624
+213367 La Salle University 2 $ 20839 < 22355
+178059 Maryville Univ. of Saint Louis 2 $ 20813 < 22365
+210775 Alvernia University 2 $ 21829 < 22382
+216357 Thiel College 2 $ 20522 < 22438
+183239 Saint Anselm College 3 $ 24124 < 24329
+153250 Dordt College 2 $ 20145 < 22541
+204185 University of Mount Union 3 $ 25324 < 26351
+146719 Loyola University Chicago 2 $ 21827 < 22627
+105899 Arizona Christian University 2 $ 22041 < 22665
+105899 Arizona Christian University 3 $ 20957 < 22041
+119173 Mount St Mary's College 2 $ 22612 < 22749
+197708 Yeshiva University 2 $ 19615 < 22878
+125727 Westmont College 2 $ 21948 < 22886
+120184 Notre Dame de Namur University 2 $ 22841 < 23260
+198969 Methodist University 2 $ 22848 < 23282
+198969 Methodist University 3 $ 22648 < 22848
+232557 Liberty University 2 $ 21993 < 23347
+182795 Franklin Pierce University 5 $ 24434 < 25021
+215691 Rosemont College 2 $ 18462 < 23745
+164988 Boston University 2 $ 23262 < 23783
+177214 Drury University 4 $ 19531 < 25220
+161518 Saint Joseph's Col. of Maine 3 $ 24601 < 24661
+167260 Nichols College 2 $ 23867 < 23877
+206525 Wittenberg University 2 $ 23597 < 24059
+170675 Lawrence Technological Univ. 5 $ 26539 < 26745
+212656 Geneva College 2 $ 15536 < 24103
+216852 Widener University-Main Campus 2 $ 23942 < 24147
+215132 University of the Sciences 2 $ 20942 < 24241
+215132 University of the Sciences 5 $ 27340 < 29450
+218973 Wofford College 2 $ 21700 < 24441
+169716 University of Detroit Mercy 2 $ 23952 < 24451
+169716 University of Detroit Mercy 3 $ 22726 < 23952
+204909 Ohio Wesleyan University 2 $ 21931 < 24543
+204909 Ohio Wesleyan University 3 $ 21073 < 21931
+136950 Rollins College 3 $ 25914 < 26204
+117946 Loyola Marymount University 2 $ 23650 < 25080
+202170 Columbus C. of Art and Design 2 $ 12737 < 25106
+202170 Columbus C. of Art and Design 5 $ 23270 < 25234
+202046 Cleveland Institute of Art 3 $ 27491 < 28423
+202046 Cleveland Institute of Art 5 $ 28650 < 33278
+101912 Oakwood University 5 $ 28929 < 29881
+148487 Roosevelt University 3 $ 34650 < 35011
+148487 Roosevelt University 5 $ 37650 < 43650
+179159 Saint Louis University 3 $ 28421 < 28462
+112084 San Diego Christian College 2 $ 20738 < 26494
+112084 San Diego Christian College 5 $ 27931 < 27948
+217165 Bryant University 2 $ 26376 < 26524
+206048 Tiffin University 2 $ 22064 < 26956
+206048 Tiffin University 5 $ 24479 < 24494
+120403 Otis College of Art and Design 2 $ 26954 < 26972
+120403 Otis College of Art and Design 5 $ 40144 < 40258
+133881 Florida Inst. of Technology 4 $ 30622 < 32010
+141060 Spelman College 4 $ 33778 < 34846
+449764 Visible Music College 4 $ 31400 < 32300
+215770 Saint Joseph's University 2 $ 25365 < 27628
+462354 John Paul Great Catholic U. 3 $ 26241 < 29146
+151801 Indiana Wesleyan University 2 $ 25116 < 27683
+151801 Indiana Wesleyan University 3 $ 22837 < 25116
+166452 Lesley University 4 $ 32514 < 32677
+102377 Tuskegee University 2 $ 27351 < 27806
+102377 Tuskegee University 4 $ 29401 < 30769
+191649 Hofstra University 2 $ 26598 < 28162
+123554 Saint Mary's C. of California 2 $ 27438 < 28173
+201964 Ohio Christian University 2 $ 24637 < 28680
+201964 Ohio Christian University 5 $ 25538 < 25789
+198695 High Point University 2 $ 27952 < 28894
+102669 Alaska Pacific University 2 $ 28525 < 29014
+102669 Alaska Pacific University 5 $ 33275 < 33475
+140951 Savannah C. of Art and Design 5 $ 37619 < 37895
+165662 Emerson College 2 $ 27708 < 29610
+165662 Emerson College 4 $ 33041 < 33240
+183026 Southern New Hampshire Univ. 2 $ 26800 < 30269
+183026 Southern New Hampshire Univ. 4 $ 27937 < 28030
+132657 Lynn University 3 $ 30413 < 31778
+131283 Catholic University of America 2 $ 29570 < 31970
+217493 Rhode Island School of Design 2 $ 31756 < 32629
+217493 Rhode Island School of Design 4 $ 37489 < 37548
+104586 Embry-Riddle Aeronautical U.-P 3 $ 35930 < 37078
+104586 Embry-Riddle Aeronautical U.-P 4 $ 35794 < 35930
+104586 Embry-Riddle Aeronautical U.-P 5 $ 34893 < 35794
+194578 Pratt Institute-Main 4 $ 40915 < 42429
+123952 S. Cal. Inst. Architecture 2 $ 30583 < 40005
+123952 S. Cal. Inst. Architecture 5 $ 28325 < 42054
