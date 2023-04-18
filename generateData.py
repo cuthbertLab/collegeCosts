@@ -3,9 +3,9 @@
 # Name:         generateData.py
 # Purpose:      Make the data work...
 #
-# Authors:      Michael Scott Cuthbert
+# Authors:      Michael Scott Asato Cuthbert
 #
-# Copyright:    Copyright © 2016 Michael Scott Cuthbert and cuthbertLab
+# Copyright:    Copyright © 2016-23 Michael Scott Asato Cuthbert and cuthbertLab
 # License:      MIT, see LICENSE file
 #-------------------------------------------------------------------------------
 '''
@@ -106,7 +106,7 @@ actRanges = [(2, 18, "ACT 25th percentile: 17 or below"),
 
 
 class FileGenerator:
-    yearStr = '2016'
+    yearStr = '2022'
     outdir = 'data/'
     dataTemplateFile = 'dataTemplate.html'
     markPub = '*Pub:'
@@ -117,6 +117,16 @@ class FileGenerator:
         self.quiet = False
         self.cachedInfo = {}
 
+        historical_data = cc.readFile('college_data_2016.csv.gz')
+        historical_by_id = {sch.unitid: sch for sch in historical_data}
+        for sch in self.r:
+            if sch.unitid in historical_by_id:
+                old_data = historical_by_id[sch.unitid]
+                if sch.satvrmid is None and old_data.satvrmid is not None:
+                    # get older SAT data for this school
+                    # print(sch)
+                    sch.historical_data = old_data
+        
         self.getTemplate()
         
     def getTemplate(self):
@@ -137,12 +147,17 @@ class FileGenerator:
             pub = self.markPub + row.STABBR
         
         shortName = row.shortName(30)
-        testScore = row.sat25 if testType == 'SAT' else row.act25
+        testScore = None
+        testIsEstimated = False
+        if testType == 'SAT':
+            testScore, testIsEstimated = row.sat25_data()
+        else:
+            testScore = row.act25
         
-        
-        costStr =  locale.format("%d", row.cost(incomeLevel), grouping=True)
-        out = ("  $%7s   %4s    %3d%% %7s" % 
-              (costStr, testScore, int(row.gradRate*100), pub))
+        costStr = locale.format_string("%d", row.cost(incomeLevel), grouping=True)
+        scoreStr = ('~' if testIsEstimated else '') + str(testScore)
+        out = ("  $%7s   %5s    %3d%% %7s" % 
+              (costStr, scoreStr, int(row.gradRate*100), pub))
         out = ('<a target=_new href="https://collegescorecard.ed.gov/school/?%d">%30s</a>  %s' %
                (row.unitid, shortName, out))
         return out

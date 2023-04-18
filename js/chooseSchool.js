@@ -33,6 +33,7 @@ $('.btn-satact').click(function() {
     makeHrefLink();
 })
 
+const year = '2022';
 
 function makeHrefLink() {
     var linkHref = "#files";
@@ -44,11 +45,11 @@ function makeHrefLink() {
     } else if (currentState === undefined) {
         linkName = "Choose your State/Territory";
         // make the button do something anyhow now...
-        linkHref = "data/2016_None" + currentIncome + currentTest + ".html";
+        linkHref = `data/${year}_None` + currentIncome + currentTest + ".html";
         $gb.removeClass('active');
     } else {
         linkName = "View College Costs!";
-        linkHref = "data/2016_" + currentState + currentIncome + currentTest + ".html";
+        linkHref = `data/${year}_` + currentState + currentIncome + currentTest + ".html";
         $gb.addClass('active');
     }
     $gb.html(linkName).attr('href', linkHref);

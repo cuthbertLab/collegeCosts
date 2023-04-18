@@ -3,19 +3,16 @@
 # Name:         collegeCosts.py
 # Purpose:      System for searching college costs by income levels
 #
-# Authors:      Michael Scott Cuthbert
+# Authors:      Michael Scott Asato Cuthbert
 #
-# Copyright:    Copyright © 2016 Michael Scott Cuthbert and cuthbertLab
+# Copyright:    Copyright © 2016-23 Michael Scott Asato Cuthbert
 # License:      MIT, see LICENSE file
 #-------------------------------------------------------------------------------
 '''
 System for searching college costs by income levels
 '''
-
-from __future__ import division, print_function
-
 import csv
-import codecs
+import gzip
 
 stateList = [l.upper() for l in ("al ak az ar ca co ct dc de fl ga hi id il in ia ks " + 
     "ky la me md ma mi mn ms mo mt ne nv nh nj nm ny nc nd oh ok or pa " + 
@@ -31,19 +28,19 @@ incomeLevels = [None,
                 'from $75,001 to $110,000',
                 'of $110,001 and above']
 
-costCutoffs = [None, 10000, 16000, 25000, 35000, 55000, 80000]
+costCutoffs = [None, 12000, 17000, 25000, 37000, 59000, 90000]
 
 
-def readFile():
+def readFile(fn='college_data_2022.csv.gz'):
     '''
-    college.csv is the data from collegescorecard.ed.gov/data called "Scorecard data"
+    college_data_year.csv is the data from collegescorecard.ed.gov/data called "Scorecard data"
+    used to be up-to-date, but no longer, at
     https://s3.amazonaws.com/ed-college-choice-public/Most+Recent+Cohorts+(Scorecard+Elements).csv
     '''
-    fn = 'college.csv'
     header = []
     rows = []
     
-    with codecs.open(fn, encoding='latin-1') as csvfile: # encoding is guessed, but appears right
+    with gzip.open(fn, mode='rt', encoding='latin-1') as csvfile: # encoding is guessed, but appears right
         reader = csv.reader(csvfile)      # King's college or something is wrong...
         for i, row in enumerate(reader):
             if i == 0:
@@ -57,9 +54,10 @@ class School(object):
     '''
     Takes in one school information object from the CSVfile...
     '''
-    def __init__(self, r, h):
-        self.data = r
-        self.headers = h
+    def __init__(self, data, headers):
+        self.data = data
+        self.headers = headers
+        self.historical_data = None  # for looking up pre-Covid test scores
         self.attrCache = {}
 
     def __repr__(self):
@@ -121,22 +119,36 @@ class School(object):
         sat['m50'] = self.satmtmid
         sat['m75'] = self.satmt75
         return sat
+
+    def sat25_data(self) -> tuple[int, bool]:
+        '''
+        Returns sat 25th percentile and a bool on whether it is estimated
+        '''
+        sats = self.SAT
+
+        if sats['v25'] is not None and sats['m25'] is not None:
+            return (sats['v25'] + sats['m25'], False)
+
+        if sats['v50'] is None and sats['m50'] is None:
+            if self.historical_data is not None:
+                return (self.historical_data.sat25_data()[0], True)
+            return (None, False)
+        else:
+            vs = sats['v50'] or sats['m50']  # missing data: treat v and m as equal
+            vm = sats['m50'] or sats['v50']  # same
+            
+            # never used in 2016; the government might calculate 25th p. always?
+            # used in 2022 -- and a missing m50
+            return (round(.895 * (vs + vm)), True)
     
     @property
     def sat25(self):
         '''
         If there is any SAT score reported, return the 25th percentile combined.
         If 25th percentile is reported, use that.  Otherwise use 89.5% of midpoint,
-        which is the average across all data
+        which is the average across all data (in 2016)
         '''
-        sats = self.SAT
-        if sats['v50'] is None:
-            return None
-        if sats['v25'] is not None and sats['m25'] is not None:
-            return sats['v25'] + sats['m25']
-        else:
-            # apparently never used; the government might calculate 25th p. always?
-            return .895 * (sats['v50'] + sats['m50'])
+        return self.sat25_data()[0]
 
 
     @property
@@ -164,13 +176,13 @@ class School(object):
         1 = 0-30k, 2=30k-48, 3=48-75k, 4=75-110; 5=110+
         '''
         levPrefix = 'NPT4'
+        if level is not None:
+            levPrefix += str(level)
+        
         if self.isPublic:
             levSuffix = '_PUB'
         else:
             levSuffix = '_PRIV'
-        
-        if level is not None:
-            levPrefix += str(level)
         
         lColumn = levPrefix + levSuffix
         return getattr(self, lColumn)
