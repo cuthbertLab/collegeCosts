@@ -5,7 +5,7 @@
 #
 # Authors:      Michael Scott Asato Cuthbert
 #
-# Copyright:    Copyright © 2016-23 Michael Scott Asato Cuthbert and cuthbertLab
+# Copyright:    Copyright © 2016-26 Michael Scott Asato Cuthbert and cuthbertLab
 # License:      MIT, see LICENSE file
 #-------------------------------------------------------------------------------
 '''
